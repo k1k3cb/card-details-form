@@ -1,5 +1,11 @@
 import { useForm } from 'react-hook-form';
-import { StyledFlexDiv, StyledFormInputExpDate, StyledFrom } from './styles';
+import {
+	StyledButton,
+	StyledFlexDiv,
+	StyledFormExpDateLeft,
+	StyledFormExpDateRight,
+	StyledFrom
+} from './styles';
 import FormInput from '../form-input/FormInput';
 
 const Form = () => {
@@ -33,37 +39,40 @@ const Form = () => {
 				errors={errors}
 			/>
 			<StyledFlexDiv>
-				<StyledFormInputExpDate
-					registerName='CARD_NUMBER'
-					name='expDate'
-					text='EXP. DATE'
-					type='number'
-					placeholder='MM'
-					register={register}
-					errors={errors}
-				/>
-				<FormInput
-					registerName='CARD_NUMBER'
-					name='mmYY'
-					text='(MM/YY)'
-					type='number'
-					placeholder='YY'
-					register={register}
-					errors={errors}
-				/>
-
-				<FormInput
-					registerName='CARD_NUMBER'
-					name='cvc'
-					text='CVC'
-					type='number'
-					placeholder='e.g. 123'
-					register={register}
-					errors={errors}
-				/>
+				<StyledFormExpDateLeft>
+					<FormInput
+						registerName='CARD_NUMBER'
+						name='expDate'
+						text='EXP. DATE'
+						type='number'
+						placeholder='MM'
+						register={register}
+						errors={errors}
+					/>
+					<FormInput
+						registerName='CARD_NUMBER'
+						name='mmYY'
+						text='(MM/YY)'
+						type='number'
+						placeholder='YY'
+						register={register}
+						errors={errors}
+					/>
+				</StyledFormExpDateLeft>
+				<StyledFormExpDateRight>
+					<FormInput
+						registerName='CARD_NUMBER'
+						name='cvc'
+						text='CVC'
+						type='number'
+						placeholder='e.g. 123'
+						register={register}
+						errors={errors}
+					/>
+				</StyledFormExpDateRight>
 			</StyledFlexDiv>
 
-			<button type='submit'>Confirm</button>
+			<StyledButton type='submit'>Confirm</StyledButton>
 		</StyledFrom>
 	);
 };

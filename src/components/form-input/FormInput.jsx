@@ -1,9 +1,9 @@
 import { FORM_VALIDATIONS } from '../../constants/form-validations';
-import { StyledInput, StyledLabel } from './styles';
+import { StyledDiv, StyledInput, StyledLabel, StyledSpanError } from './styles';
 
 const FormInput = ({ name, text, type, placeholder, register, errors }) => {
 	return (
-		<>
+		<StyledDiv>
 			<StyledLabel htmlFor={name}>
 				{text}
 				<StyledInput
@@ -14,8 +14,8 @@ const FormInput = ({ name, text, type, placeholder, register, errors }) => {
 					{...register(name, FORM_VALIDATIONS.NAME)}
 				/>
 			</StyledLabel>
-			<span>{errors?.[name]?.message}</span>
-		</>
+			<StyledSpanError>{errors?.[name]?.message}</StyledSpanError>
+		</StyledDiv>
 	);
 };
 

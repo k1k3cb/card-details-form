@@ -15,6 +15,8 @@ export const GlobalStyles = createGlobalStyle`
   body{
     margin: 0;
     font-family: "Space Grotesk", sans-serif;
+    max-width:800px;
+    margin-inline: auto;
   }
 
   a{
